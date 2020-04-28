@@ -3,9 +3,6 @@ import json
 import logging
 from flask import Flask, request
 
-from bs4 import BeautifulSoup as bs
-import requests as req
-
 app = Flask(__name__)
 logging.basicConfig(level=logging.DEBUG)
 sessionStorage = {}
@@ -31,7 +28,4 @@ def main():
 def handle_dialog(req, res):
     if req['session']['new']:
         res['response']['text'] = 'Привет!'
-        return
-    if req['request']['original_utterance'].lower() in ['расписание']:
-        res['response']['text'] = 'Факультет'
         return
