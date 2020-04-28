@@ -27,6 +27,12 @@ def main():
 
 def handle_dialog(req, res):
     if req['session']['new']:
-        res['response']['text'] = 'Привет! Я заебался'
+        res['response']['text'] = 'Привет! Я бот'
+        return
+    if req['request']['original_utterance'].lower() in [
+        'ладно',
+    ]:
+        # Пользователь согласился, прощаемся.
+        res['response']['text'] = 'Слона можно найти на Яндекс.Маркете!'
         return
 
