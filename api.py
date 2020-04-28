@@ -27,6 +27,6 @@ def main():
 
 def handle_dialog(req, res):
     if req['session']['new']:
-        res['response']['text'] = 'Привет! Купи слона!'
+        res['response']['text'] = 'Привет! Я заебался'
         return
 
