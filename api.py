@@ -34,5 +34,9 @@ def handle_dialog(req, res):
     ]:
         # Пользователь согласился, прощаемся.
         res['response']['text'] = 'Слона можно найти на Яндекс.Маркете!'
+        if req['request']['original_utterance'].lower() in [
+        'отлично',
+    ]:
+            res['response']['text'] = 'Тогда вот это'
         return
 
