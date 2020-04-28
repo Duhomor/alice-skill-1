@@ -30,7 +30,6 @@ def handle_dialog(req, res):
         res['response']['text'] = 'Привет! Я бот'
         return
     if req['request']['original_utterance'].lower() in ['ладно']: res['response']['text'] = 'Слона можно найти на Яндекс.Маркете!'
-
-    if req['request']['original_utterance'].lower() in ['отлично']: res['response']['text'] = 'Тогда так'
-    return
+        if req['request']['original_utterance'].lower() in ['отлично']: res['response']['text'] = 'Тогда так'
+    else res['response']['text'] = 'Пока'
 
