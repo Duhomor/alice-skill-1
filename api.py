@@ -38,6 +38,6 @@ def handle_dialog(req, res):
         if req['request']['original_utterance'].lower() in [
         'отлично',
     ]:
-            res['response']['text'] = 'Тогда вот это'
+            res['response']['text'] = 'приветульки'
         return
 
