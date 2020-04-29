@@ -32,7 +32,6 @@ def main():
 def handle_dialog(req, res, user_storage):
     user_storage = {}
     if req['session']['new']:
-        for row in reader:
-        res['response']['text'] = print(row)
+        res['response']['text'] = reader
         return
 
