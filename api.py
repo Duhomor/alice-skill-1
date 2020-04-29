@@ -36,6 +36,6 @@ def handle_dialog(req, res, user_storage):
     user_storage["event"] = events[number][1]
     user_storage["time"] = events[number][0]
     if req['session']['new']:
-        res['response']['text'] = '{}'.format(user_storage["time"])' - {}'.format(user_storage["time"])
+        res['response']['text'] = '{}'.format(user_storage["time"])' - {}'.format(user_storage["event"])
         return
 
