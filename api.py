@@ -2,11 +2,6 @@ from __future__ import unicode_literals
 import json
 import logging
 from flask import Flask, request
-import csv
-
-with open("ief.csv", "r", encoding = "utf8") as csvfile:
-    data = csv.DictReader(csvfile, delimiter = ",", quotechar = " ")
-    events = {x["event"]: [x["time"]] for x in data}
 
 app = Flask(__name__)
 logging.basicConfig(level=logging.DEBUG)
@@ -30,12 +25,18 @@ def main():
         indent=2
     )
 
-def handle_dialog(req, res, user_storage):
-    user_storage = {}
-    for number in range(6)
-    user_storage["event"] = events[number][1]
-    user_storage["time"] = events[number][0]
+def handle_dialog(req, res):
     if req['session']['new']:
-        res['response']['text'] = '{}'.format(user_storage["time"])' - {}'.format(user_storage["event"])
+        res['response']['text'] = 'Привет! Я бот'
+        return
+    if req['request']['original_utterance'].lower() in [
+        'ладно',
+    ]:
+        # Пользователь согласился, прощаемся.
+        res['response']['text'] = 'Слона можно найти на Яндекс.Маркете!'
+        if req['request']['original_utterance'].lower() in [
+        'отлично',
+    ]:
+            res['response']['text'] = 'Тогда вот это'
         return
 
