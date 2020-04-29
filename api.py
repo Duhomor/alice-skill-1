@@ -4,8 +4,9 @@ import logging
 from flask import Flask, request
 import csv
 
-with open('ief.csv', newline='') as File:  
-    reader = csv.reader(File)
+with open("ief.csv", "r", encoding = "utf8") as csvfile:
+    data = csv.DictReader(csvfile, delimiter = ",", quotechar = " ")
+    events = {x["event"]: [x["Часы"]] for x in data}
 
 app = Flask(__name__)
 logging.basicConfig(level=logging.DEBUG)
@@ -31,7 +32,10 @@ def main():
 
 def handle_dialog(req, res, user_storage):
     user_storage = {}
+    for number in range(6)
+    user_storage["event"] = events[number][1]
+    user_storage["time"] = events[number][0]
     if req['session']['new']:
-        res['response']['text'] = reader
+        res['response']['text'] = '{}'.format(user_storage["time"])' - {}'.format(user_storage["time"])
         return
 
