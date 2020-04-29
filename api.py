@@ -6,7 +6,7 @@ import csv
 
 with open("ief.csv", "r", encoding = "utf8") as csvfile:
     data = csv.DictReader(csvfile, delimiter = ",", quotechar = " ")
-    events = {x["event"]: [x["Часы"]] for x in data}
+    events = {x["event"]: [x["time"]] for x in data}
 
 app = Flask(__name__)
 logging.basicConfig(level=logging.DEBUG)
