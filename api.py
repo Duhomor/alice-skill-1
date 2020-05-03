@@ -27,13 +27,14 @@ def main():
 
 def handle_dialog(req, res):
     if req['session']['new']:
-        response.text = 'Привет! Я бот Ярославского Политеха. Я могу показать расписание занятий для твоей группы. На каком факультете ты учишься?'
+        res['response']['text'] = 'Привет! Я бот Ярославского Политеха. Я могу показать расписание занятий для твоей группы. На каком факультете ты учишься?'
         return
-    if request.original_utterance.lower() in [
+    
+    if req['request']['original_utterance'].lower() in [
         'Инженерно-экономический',
         'ИЭФ',
     ]:
-        res['response']['text'] = 'Теперь мне нужно узнать, в какой ты группе'
+        res['response']['text'] = 'Теперь назови свою группу'
         return
         
     #if req['request']['original_utterance'].lower() in [
