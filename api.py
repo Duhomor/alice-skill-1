@@ -5,10 +5,7 @@ from __future__ import unicode_literals
 # Импортируем модули для работы с JSON и логами.
 import json
 import logging
-import csv
-
-with open("eif.csv", "r", encoding="utf8") as file:
-    reader = csv.reader(file, delimiter=',')
+from array import *
 
 # Импортируем подмодули Flask для запуска веб-сервиса.
 from flask import Flask, request
@@ -46,17 +43,13 @@ def main():
     )
 
 def handle_dialog(req, res):
-    #temp = 'Расписание'
-    
-    #for line in reader:f
-        #temp = temp + line["time"]
-    
+    array = np.array([1, 2, 3, 4, 5])
     if req['session']['new']:
         res['response']['text'] = 'Привет! Я бот ЯГТУ. Я могу показать расписание занятий для твоей группы. В какой группе ты учишься?'
         return
     
     if req['request']['original_utterance'].lower() in['эис-44']:
-        res['response']['text'] = 'Расписание для ЭИС-44'
+        res['response']['text'] = '{}'.format(array)
         return
     elif req['request']['original_utterance'].lower() in['эис-45']:
         res['response']['text'] = 'Расписание для ЭИС-45'
