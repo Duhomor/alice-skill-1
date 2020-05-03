@@ -34,6 +34,7 @@ def handle_dialog(req, res):
         'ИЭФ',
     ]:
         res['response']['text'] = 'Теперь мне нужно узнать, в какой ты группе'
+        return
         
     #if req['request']['original_utterance'].lower() in [
     #    'ЭИС-44',
