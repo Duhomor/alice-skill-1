@@ -21,7 +21,7 @@ sessionStorage = {}
 
 import csv
 def csv_dict_reader(file_obj):
-    reader = csv.DictReader(file_obj, delimiter=',')
+    reader = csv.DictReader(file_obj, delimiter=';')
     for line in reader:
         res['response']['text'] = (line["time"])
 
