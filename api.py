@@ -19,6 +19,11 @@ sessionStorage = {}
 # Задаем параметры приложения Flask.
 @app.route("/", methods=['POST'])
 
+import csv
+with open("ief.csv", "r", encoding="utf8") as csvfile:
+    data = csv.DictReader(csvfile, delimiter=",", quotechar=" ")
+    events = {[x["time"], x["event"]] for x in data}
+
 def main():
 # Функция получает тело запроса и возвращает ответ.
     logging.info('Request: %r', request.json)
@@ -42,12 +47,14 @@ def main():
     )
 
 def handle_dialog(req, res):
+    user_storage = {}
+    user_storage['event'] = events[1][1]
     if req['session']['new']:
         res['response']['text'] = 'Привет! Я бот ЯГТУ. Я могу показать расписание занятий для твоей группы. В какой группе ты учишься?'
         return
     
     if req['request']['original_utterance'].lower() in['эис-44']:
-        res['response']['text'] = 'Расписание для ЭИС-44'
+        res['response']['text'] = '{}'.format(user_storage["event"])
         return
     elif req['request']['original_utterance'].lower() in['эис-45']:
         res['response']['text'] = 'Расписание для ЭИС-45'
