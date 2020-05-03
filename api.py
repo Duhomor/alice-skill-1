@@ -34,7 +34,7 @@ def handle_dialog(req, res):
         'Инженерно-экономический',
         'ИЭФ',
     ]:
-        res['response']['text'] = 'Теперь назови свою группу'
+        res['response']['text'] = "Теперь назови свою группу"
         return
         
     #if req['request']['original_utterance'].lower() in [
