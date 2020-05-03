@@ -5,6 +5,7 @@ from __future__ import unicode_literals
 # Импортируем модули для работы с JSON и логами.
 import json
 import logging
+import csv
 
 # Импортируем подмодули Flask для запуска веб-сервиса.
 from flask import Flask, request
@@ -18,8 +19,6 @@ sessionStorage = {}
 
 # Задаем параметры приложения Flask.
 @app.route("/", methods=['POST'])
-
-import csv
 
 def main():
 # Функция получает тело запроса и возвращает ответ.
@@ -61,7 +60,7 @@ def handle_dialog(req, res):
     
     res['response']['text'] = 'Я не знаю такой группы. Попробуй ещё раз.'
     
-def csv_dict_reader(file_obj):
-    reader = csv.DictReader(file_obj, delimiter=';')
+#def csv_dict_reader(file_obj):
+    #reader = csv.DictReader(file_obj, delimiter=';')
     #for line in reader:
         #res['response']['text'] = (line["time"])
