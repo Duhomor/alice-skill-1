@@ -52,7 +52,9 @@ def handle_dialog(req, res):
     if req['request']['original_utterance'].lower() in['эис-44']:
         #res['response']['text'] = '{}'.format(user_storage["event"])
         with open("eif.csv") as f_obj:
-        csv_dict_reader(f_obj)
+        reader = csv.DictReader(file_obj, delimiter=';')
+        for line in reader:
+        res['response']['text'] = (line["time"])
         return
     elif req['request']['original_utterance'].lower() in['эис-45']:
         res['response']['text'] = 'Расписание для ЭИС-45'
@@ -60,7 +62,3 @@ def handle_dialog(req, res):
     
     res['response']['text'] = 'Я не знаю такой группы. Попробуй ещё раз.'
     
-def csv_dict_reader(file_obj, res):
-    reader = csv.DictReader(file_obj, delimiter=';')
-    for line in reader:
-        res['response']['text'] = (line["time"])
