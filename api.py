@@ -20,10 +20,6 @@ sessionStorage = {}
 @app.route("/", methods=['POST'])
 
 import csv
-def csv_dict_reader(file_obj):
-    reader = csv.DictReader(file_obj, delimiter=';')
-    #for line in reader:
-        #res['response']['text'] = (line["time"])
 
 def main():
 # Функция получает тело запроса и возвращает ответ.
@@ -64,3 +60,8 @@ def handle_dialog(req, res):
         return
     
     res['response']['text'] = 'Я не знаю такой группы. Попробуй ещё раз.'
+    
+def csv_dict_reader(file_obj):
+    reader = csv.DictReader(file_obj, delimiter=';')
+    #for line in reader:
+        #res['response']['text'] = (line["time"])
