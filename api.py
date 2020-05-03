@@ -22,8 +22,8 @@ sessionStorage = {}
 import csv
 def csv_dict_reader(file_obj):
     reader = csv.DictReader(file_obj, delimiter=';')
-    for line in reader:
-        res['response']['text'] = (line["time"])
+    #for line in reader:
+        #res['response']['text'] = (line["time"])
 
 def main():
 # Функция получает тело запроса и возвращает ответ.
@@ -56,8 +56,8 @@ def handle_dialog(req, res):
     
     if req['request']['original_utterance'].lower() in['эис-44']:
         #res['response']['text'] = '{}'.format(user_storage["event"])
-        with open("eif.csv") as f_obj:
-        csv_dict_reader(f_obj)
+        #with open("eif.csv") as f_obj:
+        #csv_dict_reader(f_obj)
         return
     elif req['request']['original_utterance'].lower() in['эис-45']:
         res['response']['text'] = 'Расписание для ЭИС-45'
