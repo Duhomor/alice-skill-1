@@ -43,13 +43,13 @@ def main():
 
 from array import *
 def handle_dialog(req, res):
-    array = array(['Понедельник'], ['Вторник'])
+    #array = array(['Понедельник'], ['Вторник'])
     if req['session']['new']:
         res['response']['text'] = 'Привет! Я бот ЯГТУ. Я могу показать расписание занятий для твоей группы. В какой группе ты учишься?'
         return
     
     if req['request']['original_utterance'].lower() in['эис-44']:
-        res['response']['text'] = '{}'.format(array[1])
+        #res['response']['text'] = '{}'.format(array[1])
         return
     elif req['request']['original_utterance'].lower() in['эис-45']:
         res['response']['text'] = 'Расписание для ЭИС-45'
