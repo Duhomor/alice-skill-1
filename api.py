@@ -7,6 +7,9 @@ import json
 import logging
 import csv
 
+with open("eif.csv", "r", encoding="utf8") as file:
+    reader = csv.DictReader(file, delimiter=';')
+
 # Импортируем подмодули Flask для запуска веб-сервиса.
 from flask import Flask, request
 app = Flask(__name__)
@@ -44,8 +47,7 @@ def main():
 
 def handle_dialog(req, res):
     #temp = 'Расписание'
-    with open("eif.csv", "r", encoding="utf8") as file:
-    reader = csv.DictReader(file, delimiter=';')
+    
     #for line in reader:f
         #temp = temp + line["time"]
     
