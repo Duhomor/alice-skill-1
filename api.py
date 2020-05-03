@@ -1,15 +1,28 @@
+# coding: utf-8
+# Импортирует поддержку UTF-8.
 from __future__ import unicode_literals
+
+# Импортируем модули для работы с JSON и логами.
 import json
 import logging
-from flask import Flask, request
 
+# Импортируем подмодули Flask для запуска веб-сервиса.
+from flask import Flask, request
 app = Flask(__name__)
+
+
 logging.basicConfig(level=logging.DEBUG)
+
+# Хранилище данных о сессиях.
 sessionStorage = {}
+
+# Задаем параметры приложения Flask.
 @app.route("/", methods=['POST'])
 
 def main():
+# Функция получает тело запроса и возвращает ответ.
     logging.info('Request: %r', request.json)
+
     response = {
         "version": request.json['version'],
         "session": request.json['session'],
@@ -17,33 +30,40 @@ def main():
             "end_session": False
         }
     }
+
     handle_dialog(request.json, response)
+
     logging.info('Response: %r', response)
+
     return json.dumps(
         response,
         ensure_ascii=False,
         indent=2
     )
 
+# Функция для непосредственной обработки диалога.
 def handle_dialog(req, res):
+    user_id = req['session']['user_id']
+
     if req['session']['new']:
-        res['response']['text'] = 'Привет! Я бот Ярославского Политеха. Я могу показать расписание занятий для твоей группы. На каком факультете ты учишься?'
+        # Это новый пользователь.
+        # Инициализируем сессию и поприветствуем его.
+
+        res['response']['text'] = 'Привет! Купи слона!'
         return
-    
+
+    # Обрабатываем ответ пользователя.
     if req['request']['original_utterance'].lower() in [
-        'Инженерно-экономический',
-        'ИЭФ',
+        'ладно',
+        'куплю',
+        'покупаю',
+        'хорошо',
     ]:
-        res['response']['text'] = "Теперь назови свою группу"
+        # Пользователь согласился, прощаемся.
+        res['response']['text'] = 'Слона можно найти на Яндекс.Маркете!'
         return
-        
-    #if req['request']['original_utterance'].lower() in [
-    #    'ЭИС-44',
-    #    '44',
-    #]:
-    #    res['response']['text'] = 'Расписание на какой день недели тебя интересует?'
-    #    
-    #if req['request']['original_utterance'].lower() in [
-    #    'Понедельник',
-    #]:
-    #    res['response']['text'] = 'Понедельник:\n8.30-10.00 -\n10.10-11.40 -\n11.40-12.20 -\n12.20-13.50 1-5 н. Защита интеллектуальной собственности, лек., доц. В.Г. Копыльцов, Г-909\n14.00-15.30 1-5 н. Защита интеллектуальной собственности, лек., доц. В.Г. Копыльцов, Г-909\n15.40-17.10 2-5 н. Защита интеллектуальной собственности, пр.з., Г-909\n17.30-19.00 2-5 н. Защита интеллектуальной собственности, пр.з., Г-909'
+
+    # Если нет, то убеждаем его купить слона!
+    res['response']['text'] = 'Все говорят "%s", а ты купи слона!' % (
+        req['request']['original_utterance']
+    )
