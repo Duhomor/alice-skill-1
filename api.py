@@ -43,17 +43,18 @@ def main():
     )
 
 def handle_dialog(req, res):
-    temp = 'Расписание'
-    with open("eif.csv") as f_obj:
-    reader = csv.DictReader(file_obj, delimiter=';')
-    for line in reader:
-        temp = temp + line["time"]
+    #temp = 'Расписание'
+    with open("eif.csv") as file:
+    reader = csv.DictReader(file, delimiter=';')
+    #for line in reader:
+        #temp = temp + line["time"]
+    
     if req['session']['new']:
         res['response']['text'] = 'Привет! Я бот ЯГТУ. Я могу показать расписание занятий для твоей группы. В какой группе ты учишься?'
         return
     
     if req['request']['original_utterance'].lower() in['эис-44']:
-        #res['response']['text'] = '{}'.format(user_storage["event"])
+        res['response']['text'] = 'Расписание для ЭИС-44'
         return
     elif req['request']['original_utterance'].lower() in['эис-45']:
         res['response']['text'] = 'Расписание для ЭИС-45'
