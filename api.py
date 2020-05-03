@@ -56,9 +56,7 @@ def handle_dialog(req, res):
     if req['request']['original_utterance'].lower() in [
         'Инженерно-экономический',
         'ИЭФ',
-    ]:
-        # Пользователь согласился, прощаемся.
-        res['response']['text'] = 'Теперь назови свою группу'
+    ]: res['response']['text'] = 'Теперь назови свою группу'
         return
 
     # Если нет, то убеждаем его купить слона!
