@@ -41,30 +41,16 @@ def main():
         indent=2
     )
 
-# Функция для непосредственной обработки диалога.
 def handle_dialog(req, res):
-    user_id = req['session']['user_id']
-
     if req['session']['new']:
-        # Это новый пользователь.
-        # Инициализируем сессию и поприветствуем его.
-
         res['response']['text'] = 'Привет! Я бот ЯГТУ. Я могу показать расписание занятий для твоей группы. В какой группе ты учишься?'
         return
-
-    # Обрабатываем ответ пользователя.
-    if req['request']['original_utterance'].lower() in [
-        'эис-44',
-    ]:
-        # Пользователь согласился, прощаемся.
+    
+    if req['request']['original_utterance'].lower() in['эис-44']:
         res['response']['text'] = 'Расписание для ЭИС-44'
         return
-    elif req['request']['original_utterance'].lower() in [
-        'эис-45',
-    ]:
-        # Пользователь согласился, прощаемся.
+    elif req['request']['original_utterance'].lower() in['эис-45']:
         res['response']['text'] = 'Расписание для ЭИС-45'
         return
-
-    # Если нет, то убеждаем его купить слона!
-    res['response']['text'] = 'Повтори группу'
+    
+    res['response']['text'] = 'Я не знаю такой группы. Попробуй ещё раз.'
