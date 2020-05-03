@@ -43,13 +43,13 @@ def main():
     )
 
 def handle_dialog(req, res):
-    array = np.array([1, 2, 3, 4, 5])
+    temp = 'понедельник'
     if req['session']['new']:
         res['response']['text'] = 'Привет! Я бот ЯГТУ. Я могу показать расписание занятий для твоей группы. В какой группе ты учишься?'
         return
     
     if req['request']['original_utterance'].lower() in['эис-44']:
-        res['response']['text'] = '{}'.format(array)
+        res['response']['text'] = '{}'.format(temp)
         return
     elif req['request']['original_utterance'].lower() in['эис-45']:
         res['response']['text'] = 'Расписание для ЭИС-45'
