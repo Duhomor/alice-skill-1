@@ -44,7 +44,7 @@ def main():
 
 def handle_dialog(req, res):
     #temp = 'Расписание'
-    with open("eif.csv") as file:
+    with open("eif.csv", "r", encoding="utf8") as file:
     reader = csv.DictReader(file, delimiter=';')
     #for line in reader:
         #temp = temp + line["time"]
