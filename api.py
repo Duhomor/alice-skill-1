@@ -27,9 +27,9 @@ def main():
 
 def handle_dialog(req, res):
     if req['session']['new']:
-        res['response']['text'] = 'Привет! Я бот Ярославского Политеха. Я могу показать расписание занятий для твоей группы. На каком факультете ты учишься?'
+        response.text = 'Привет! Я бот Ярославского Политеха. Я могу показать расписание занятий для твоей группы. На каком факультете ты учишься?'
         return
-    if req['request']['original_utterance'].lower() in [
+    if request.original_utterance.lower() in [
         'Инженерно-экономический',
         'ИЭФ',
     ]:
