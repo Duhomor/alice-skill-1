@@ -50,17 +50,19 @@ def handle_dialog(req, res):
         storage["day"] = 'Понедельник'
         if storage["group"] != '':
             res['response']['text'] = '{}'.format(storage["day"]) ' {}'.format(storage["group"])
+            return
         else:
             res['response']['text'] = 'В какой группе ты учишься?'
-        return        
+            return        
 
     if req['request']['original_utterance'].lower() in['эис-44']:
         storage["group"] = 'Эис-44'
         if storage["day"] != '':
             res['response']['text'] = '{}'.format(storage["day"]) ' {}'.format(storage["group"])
+            return
         else:
             res['response']['text'] = 'Какой день недели интересует?'
-        return     
+            return     
     
     res['response']['text'] = 'Я не знаю такой группы. Попробуй ещё раз.'
     
