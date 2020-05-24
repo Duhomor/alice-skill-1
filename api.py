@@ -47,13 +47,14 @@ def handle_dialog(req, res):
         return
                 
     if req['request']['original_utterance'].lower() in['эис-44']:
-        storage["group"] = 'ЭИС-44'
+        storage["group"] = 'эис-44'
         res['response']['text'] = 'ЭИС-44'   
         return
     
-    if (req['request']['original_utterance'].lower() in['понедельник'] && storage["group"] == 'ЭИС-44'):
+    if req['request']['original_utterance'].lower() in['понедельник']:
         storage["day"] = 'Понедельник'
-        res['response']['text'] = 'Понедельник'   
+            if storage["group"] == 'эис-44':
+            res['response']['text'] = 'Понедельник'   
         return
     
     res['response']['text'] = 'Я не знаю такой группы. Попробуй ещё раз.'
