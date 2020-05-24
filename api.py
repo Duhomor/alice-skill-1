@@ -48,11 +48,11 @@ def handle_dialog(req, res):
         res['response']['text'] = 'Привет! Я бот ЯГТУ. Я могу показать расписание занятий для твоей группы. В какой группе ты учишься?'
         return
             
-    if (req['request']['original_utterance'].lower() in['эис-44'] & storage["group"] == 'Эис-44'):
+    if (req['request']['original_utterance'].lower() in['понедельник'] & storage["group"] == 'Эис-44'):
         storage["day"] = 'Понедельник'
         res['response']['text'] = '{}'.format(storage["day"]) ' {}'.format(storage["group"])   
         return
-    elif
+    elif (req['request']['original_utterance'].lower() in['понедельник'] & storage["group"] == 'пусто'):
         res['response']['text'] = 'В какой группе ты учишься?'
         return  
 
@@ -60,7 +60,7 @@ def handle_dialog(req, res):
         storage["group"] = 'Эис-44'
         res['response']['text'] = '{}'.format(storage["day"]) ' {}'.format(storage["group"])   
         return
-    elif
+    elif (req['request']['original_utterance'].lower() in['эис-44'] & storage["day"] == 'пусто'):
         res['response']['text'] = 'Какой день недели интересует?'
         return    
     
