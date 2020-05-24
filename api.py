@@ -47,21 +47,21 @@ def handle_dialog(req, res):
     if req['session']['new']:
         res['response']['text'] = 'Привет! Я бот ЯГТУ. Я могу показать расписание занятий для твоей группы. В какой группе ты учишься?'
         return
-        
-    if req['request']['original_utterance'].lower() in['понедельник']:
+            
+    if (req['request']['original_utterance'].lower() in['эис-44'] & storage["group"] == 'Эис-44'):
         storage["day"] = 'Понедельник'
-        if storage["group"] == "пусто":
-            res['response']['text'] = '{}'.format(storage["day"]) ' {}'.format(storage["group"])
-        else:
-            res['response']['text'] = 'В какой группе ты учишься?'
-        return        
+        res['response']['text'] = '{}'.format(storage["day"]) ' {}'.format(storage["group"])   
+        return
+    elif
+        res['response']['text'] = 'В какой группе ты учишься?'
+        return  
 
-    if req['request']['original_utterance'].lower() in['эис-44']:
+    if (req['request']['original_utterance'].lower() in['эис-44'] & storage["day"] == 'Понедельник'):
         storage["group"] = 'Эис-44'
-        if storage["day"] == "пусто":
-            res['response']['text'] = '{}'.format(storage["day"]) ' {}'.format(storage["group"])
-        else:
-            res['response']['text'] = 'Какой день недели интересует?'
+        res['response']['text'] = '{}'.format(storage["day"]) ' {}'.format(storage["group"])   
+        return
+    elif
+        res['response']['text'] = 'Какой день недели интересует?'
         return    
     
     res['response']['text'] = 'Я не знаю такой группы. Попробуй ещё раз.'
