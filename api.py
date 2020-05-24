@@ -42,13 +42,15 @@ def main():
 
 def handle_dialog(req, res):
     storage = {}
+    storage["day"] = "пусто"
+    storage["group"] = "пусто"
     if req['session']['new']:
         res['response']['text'] = 'Привет! Я бот ЯГТУ. Я могу показать расписание занятий для твоей группы. В какой группе ты учишься?'
         return
         
     if req['request']['original_utterance'].lower() in['понедельник']:
         storage["day"] = 'Понедельник'
-        if storage["group"] != "":
+        if storage["group"] == "пусто":
             res['response']['text'] = '{}'.format(storage["day"]) ' {}'.format(storage["group"])
         else:
             res['response']['text'] = 'В какой группе ты учишься?'
@@ -56,7 +58,7 @@ def handle_dialog(req, res):
 
     if req['request']['original_utterance'].lower() in['эис-44']:
         storage["group"] = 'Эис-44'
-        if storage["day"] != "":
+        if storage["day"] == "пусто":
             res['response']['text'] = '{}'.format(storage["day"]) ' {}'.format(storage["group"])
         else:
             res['response']['text'] = 'Какой день недели интересует?'
