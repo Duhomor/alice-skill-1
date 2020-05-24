@@ -54,6 +54,7 @@ def handle_dialog(req, res):
     if req['request']['original_utterance'].lower() in['эис-44']:
         storage["group"] = 'Эис-44'
         res['response']['text'] = '{}'.format(storage["group"])
+        res['response']['text'] = 'Я не знаю такой группы. Попробуй ещё раз.'
         return     
     
     res['response']['text'] = 'Я не знаю такой группы. Попробуй ещё раз.'
