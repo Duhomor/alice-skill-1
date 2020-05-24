@@ -48,10 +48,6 @@ def handle_dialog(req, res):
         
     if req['request']['original_utterance'].lower() in['понедельник']:
         storage["day"] = 'Понедельник'
-        if storage["group"] != '':
-            res['response']['text'] = 'В какой группе ты учишься?'
-        else
-            res['response']['text'] = 'Расписание для {}'.format(storage["group"]) 'на {}'.format(storage["day"])
         return        
     elif req['request']['original_utterance'].lower() in['вторник']:
         storage["day"] = 'Вторник'
@@ -83,10 +79,6 @@ def handle_dialog(req, res):
         return    
     elif req['request']['original_utterance'].lower() in['эис-44']:
         storage["group"] = 'эис-44'
-        if storage["day"] != '':
-            res['response']['text'] = 'На какой день недели нужно найти расписание?'
-        else
-            res['response']['text'] = 'Расписание для {}'.format(storage["group"]) 'на {}'.format(storage["day"])
         return    
     elif req['request']['original_utterance'].lower() in['эис-45']:
         storage["group"] = 'эис-45'
