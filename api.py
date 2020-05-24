@@ -51,7 +51,7 @@ def handle_dialog(req, res):
         res['response']['text'] = 'ЭИС-44'   
         return
     
-    if (req['request']['original_utterance'].lower() in['понедельник'] & storage["group"] == 'ЭИС-44'):
+    if (req['request']['original_utterance'].lower() in['понедельник'] && storage["group"] == 'ЭИС-44'):
         storage["day"] = 'Понедельник'
         res['response']['text'] = 'Понедельник'   
         return
