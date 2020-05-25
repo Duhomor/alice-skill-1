@@ -53,8 +53,11 @@ def handle_dialog(req, res):
     
     if req['request']['original_utterance'].lower() in['понедельник']:
         storage["day"] = 'Понедельник'
-            if storage["group"] == 'эис-44':
-            res['response']['text'] = 'Понедельник'   
+        res['response']['text'] = 'Понедельник'   
+        return
+    
+    if req['request']['original_utterance'].lower() in['помощь']:
+        res['response']['text'] = 'Для того, чтобы узнать расписание занятий для своей группы, просто скажи мне её название, например, ЭИС-44. Если хочешь закрыть навык, скажи мне "Выход"'   
         return
     
     res['response']['text'] = 'Я не знаю такой группы. Попробуй ещё раз.'
