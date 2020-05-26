@@ -46,9 +46,10 @@ def handle_dialog(req, res):
         res['response']['text'] = 'Привет! Я бот ЯГТУ. Я могу показать расписание занятий для твоей группы. В какой группе ты учишься?'
         return
     
-    if req['request']['original_utterance'].lower() in['другая группа']:
-        res['response']['text'] = 'Назови группу, для которой нужно найти расписание'   
+    if req['request']['original_utterance'].lower() in['эис-44']:
+        storage["group"] = 'эис-44'
+        res['response']['text'] = 'Расписание на какой день недели тебя интересует?'   
         return
-    
+
     res['response']['text'] = 'К сожалению, я не знаю такой команды. Попробуй ещё раз или скажи "помощь" для того, чтобы запросить правила навыка.'
     
