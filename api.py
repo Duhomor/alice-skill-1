@@ -59,11 +59,6 @@ def handle_dialog(req, res):
         storage["group"] = 'эук-43'
         res['response']['text'] = 'Расписание на какой день недели тебя интересует?'   
         return
-                
-    if req['request']['original_utterance'].lower() in['эук-43']:
-        storage["group"] = 'эук-43'
-        res['response']['text'] = 'Расписание на какой день недели тебя интересует?'   
-        return
     
     if req['request']['original_utterance'].lower() in['понедельник']:
         storage["day"] = 'Понедельник'
@@ -92,7 +87,7 @@ def handle_dialog(req, res):
     
     if req['request']['original_utterance'].lower() in['суббота']:
         storage["day"] = 'Суббота'
-        res['response']['text'] = 'а'   
+        res['response']['text'] = 'А'   
         return
     
     if req['request']['original_utterance'].lower() in['воскресенье']:
@@ -100,11 +95,11 @@ def handle_dialog(req, res):
         res['response']['text'] = 'Этот день - выходной.'   
         return
     
-    if req['request']['original_utterance'].lower() in['спасибо', 'благодарю', 'мерси']:
+    if req['request']['original_utterance'].lower() in['спасибо']:
         res['response']['text'] = 'Рада помочь.'   
         return
     
-    if req['request']['original_utterance'].lower() in['помощь', 'помоги', 'help']:
+    if req['request']['original_utterance'].lower() in['помощь']:
         res['response']['text'] = 'Для того, чтобы узнать расписание занятий для своей группы, просто скажи мне её название, например, "ЭИС-44", а затем назови день недели, на который нужно найти расписание.'   
         return
     
