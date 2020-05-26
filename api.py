@@ -61,29 +61,9 @@ def handle_dialog(req, res):
         res['response']['text'] = '08.30-10.00 - 2-7н. Практика производственная, лек., пр.з. 4 ч., Г-606 \n10.10-11.40 \n11.40-12.20 \n12.20-13.50 - 2,7-10н. Всеобщее управление качеством, лек., пр.з. 4 ч., В-309 \n14.00-15.30 \n15.40-17.10 \n17.30-19.00'   
         return
     
-    if req['request']['original_utterance'].lower() in['вторник']:
-        storage["day"] = 'Вторник'
-        res['response']['text'] = 'А'   
-        return
-    
-    if req['request']['original_utterance'].lower() in['среда']:
-        storage["day"] = 'Среда'
-        res['response']['text'] = 'А'   
-        return
-    
     if req['request']['original_utterance'].lower() in['четверг']:
         storage["day"] = 'Четверг'
         res['response']['text'] = '08.30-10.00 - 3н. БЖД лаб. 4 ч. по п/гр, Г-721 \n10.10-11.40 - 5-6н. БЖД, пр.з. 4 ч., Г-903 \n11.40-12.20 \n12.20-13.50 - 2н. Защита интелл. собственности, пр.з. 4 ч., В-306 \n14.00-15.30 \n15.40-17.10 \n17.30-19.00'
-        return
-    
-    if req['request']['original_utterance'].lower() in['пятница']
-        storage["day"] = 'Пятница
-        res['response']['text'] = 'А'   
-        return
-    
-    if req['request']['original_utterance'].lower() in['суббота']:
-        storage["day"] = 'Суббота'
-        res['response']['text'] = 'А'   
         return
     
     if req['request']['original_utterance'].lower() in['воскресенье']:
