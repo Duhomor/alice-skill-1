@@ -64,8 +64,8 @@ def handle_dialog(req, res):
                             "button": {
                                 "text": "Понедельник",
                                 "url": "http://example.com/",
-                                "payload": {}
-                            }
+                                "payload": {},
+                            },
                         }
                         {
                             "image_id": "1030494/1707ea63f8a71ce5995c",
@@ -74,8 +74,8 @@ def handle_dialog(req, res):
                             "button": {
                                 "text": "Вторник",
                                 "url": "http://example.com/",
-                                "payload": {}
-                            }
+                                "payload": {},
+                            },
                         }
                         {
                             "image_id": "1540737/b46580059879b8be11db",
@@ -84,31 +84,31 @@ def handle_dialog(req, res):
                             "button": {
                                 "text": "Среда",
                                 "url": "http://example.com/",
-                                "payload": {}
-                            }
-                        }
+                                "payload": {},
+                            },
+                        },
                     ],
                     "footer": {
                         "text": "Текст блока под изображением.",
                         "button": {
                             "text": "Надпись на кнопке",
                             "url": "https://example.com/",
-                            "payload": {}
-                        }
-                    }
+                            "payload": {},
+                        },
+                    },
                 },
                 "buttons": [
                     {
                         "title": "Надпись на кнопке",
                         "payload": {},
                         "url": "https://example.com/",
-                        "hide": true
-                    }
+                        "hide": true,
+                    },
                 ],
-                "end_session": false
+                "end_session": false,
             },
-            "version": "1.0"
-        }
+            "version": "1.0",
+        },
         res['response'] 
         return
     
