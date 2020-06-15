@@ -47,7 +47,7 @@ def handle_dialog(req, res):
         return
     
     if req['request']['original_utterance'].lower() in['эис-45']:
-        userStorage['group'] = 'eis45',
+        usstorage['group'] = 'eis45',
         res['response']['text'] = 'Рассписание на какой день недели тебе нужно найти?'
         return
     
