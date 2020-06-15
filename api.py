@@ -42,8 +42,8 @@ def main():
 
 
 def handle_dialog(req, res, group_storage):
-    group_storage = 'none'
     if req['session']['new']:
+        group_storage = 'none'
         res['response']['text'] = 'Привет! Я бот ЯГТУ. Я могу показать расписание занятий для твоей группы. В какой группе ты учишься?'
         return
     
