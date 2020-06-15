@@ -49,7 +49,8 @@ def handle_dialog(req, res):
     if req['request']['original_utterance'].lower() in['эис-45']:
         response = {
             "response": {
-                "text": "Расписание",
+                "text": "Не удалось найти расписание",
+                "tts": "Не удал+ось найт+и распис+ание",
                 "card": {
                     "type": "ItemsList",
                     "header": {
@@ -57,27 +58,58 @@ def handle_dialog(req, res):
                     },
                     "items": [
                         {
-                            "image_id": "1030494/1707ea63f8a71ce5995c",
+                            "image_id": "1540737/9207ce3683b5e3d72274",
                             "title": "Понедельник",
                             "description": "Понедельник",
-                        },
+                            "button": {
+                                "text": "Понедельник",
+                                "url": "http://example.com/",
+                                "payload": {}
+                            }
+                        }
                         {
-                            "image_id": "965417/7cd3179712cb2a64545c",
+                            "image_id": "1030494/1707ea63f8a71ce5995c",
                             "title": "Вторник",
                             "description": "Вторник",
-                        },
+                            "button": {
+                                "text": "Вторник",
+                                "url": "http://example.com/",
+                                "payload": {}
+                            }
+                        }
                         {
-                            "image_id": "1030494/c36447777399c864ce73",
+                            "image_id": "1540737/b46580059879b8be11db",
                             "title": "Среда",
                             "description": "Среда",
-                        },
+                            "button": {
+                                "text": "Среда",
+                                "url": "http://example.com/",
+                                "payload": {}
+                            }
+                        }
                     ],
-                    "end_session": false
+                    "footer": {
+                        "text": "Текст блока под изображением.",
+                        "button": {
+                            "text": "Надпись на кнопке",
+                            "url": "https://example.com/",
+                            "payload": {}
+                        }
+                    }
                 },
-                "version": "1.0"
-            }
+                "buttons": [
+                    {
+                        "title": "Надпись на кнопке",
+                        "payload": {},
+                        "url": "https://example.com/",
+                        "hide": true
+                    }
+                ],
+                "end_session": false
+            },
+            "version": "1.0"
         }
-        res['response']['text'] = 'Рада помочь.'   
+        res['response'] 
         return
     
     if req['request']['original_utterance'].lower() in['спасибо', 'благодарю']:
