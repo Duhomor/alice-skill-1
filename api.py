@@ -58,7 +58,12 @@ def handle_dialog(req, res):
                     },
                     "items": [
                         {
-                            "image_id": "https://sun1-28.userapi.com/c626830/v626830843/3705e/Z2DTU2yvRJE.jpg",
+                            "image_id": "1540737/9207ce3683b5e3d72274",
+                            "title": "текст",
+                            "description": "текст",
+                        },
+                        {
+                            "image_id": "1030494/1707ea63f8a71ce5995c",
                             "title": "текст",
                             "description": "текст",
                         },
