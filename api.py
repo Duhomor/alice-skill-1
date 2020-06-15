@@ -47,7 +47,7 @@ def handle_dialog(req, res):
         return
     
     if req['request']['original_utterance'].lower() in['эис-45']:
-        response = {
+        imgres = {
             "response": {
                 "text": "Не удалось найти расписание",
                 "tts": "Не удал+ось найт+и распис+ание",
@@ -67,7 +67,7 @@ def handle_dialog(req, res):
                 "end_session": false
             },
         },
-        res['response']['text'] = 'Что то не так'
+        res['imgres']
         return
     
     if req['request']['original_utterance'].lower() in['спасибо', 'благодарю']:
