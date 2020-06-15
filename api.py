@@ -54,20 +54,20 @@ def handle_dialog(req, res):
                 "card": {
                     "type": "ItemsList",
                     "header": {
-                        "text": "ЭИС-45",
+                        "text": "текст",
                     },
                     "items": [
                         {
                             "image_id": "https://sun1-28.userapi.com/c626830/v626830843/3705e/Z2DTU2yvRJE.jpg",
-                            "title": "Среда",
-                            "description": "Среда",
+                            "title": "текст",
+                            "description": "текст",
                         },
                     ],
                 },
                 "end_session": false
             },
         },
-        res['response'] 
+        res['response']['text'] = 'Что то не так'
         return
     
     if req['request']['original_utterance'].lower() in['спасибо', 'благодарю']:
