@@ -63,8 +63,6 @@ def handle_dialog(req, res):
                             "description": "Понедельник",
                             "button": {
                                 "text": "Понедельник",
-                                "url": "http://example.com/",
-                                "payload": {},
                             },
                         }
                         {
@@ -73,8 +71,6 @@ def handle_dialog(req, res):
                             "description": "Вторник",
                             "button": {
                                 "text": "Вторник",
-                                "url": "http://example.com/",
-                                "payload": {},
                             },
                         }
                         {
@@ -83,8 +79,6 @@ def handle_dialog(req, res):
                             "description": "Среда",
                             "button": {
                                 "text": "Среда",
-                                "url": "http://example.com/",
-                                "payload": {},
                             },
                         },
                     ],
@@ -92,23 +86,19 @@ def handle_dialog(req, res):
                         "text": "Текст блока под изображением.",
                         "button": {
                             "text": "Надпись на кнопке",
-                            "url": "https://example.com/",
-                            "payload": {},
                         },
                     },
                 },
                 "buttons": [
                     {
                         "title": "Надпись на кнопке",
-                        "payload": {},
-                        "url": "https://example.com/",
                         "hide": true,
                     },
                 ],
-                "end_session": false,
+                "end_session": false
             },
-            "version": "1.0",
-        },
+            "version": "1.0"
+        }
         res['response'] 
         return
     
