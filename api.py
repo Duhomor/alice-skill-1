@@ -77,7 +77,7 @@ def handle_dialog(req, res):
                 "version": "1.0"
             }
         }
-        res['response']
+        res['response']['text'] = 'Рада помочь.'   
         return
     
     if req['request']['original_utterance'].lower() in['спасибо', 'благодарю']:
