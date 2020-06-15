@@ -47,7 +47,7 @@ def handle_dialog(req, res):
         return
     
     if req['request']['original_utterance'].lower() in['эис-45']:
-        res{
+        response = {
             "response": {
                 "text": "Расписание",
                 "card": {
@@ -56,26 +56,28 @@ def handle_dialog(req, res):
                         "text": "ЭИС-45",
                     },
                     "items": [
-                     {
-                         "image_id": "1030494/1707ea63f8a71ce5995c",
-                         "title": "Понедельник",
-                         "description": "Понедельник"
-                     }
-                     {
-                         "image_id": "965417/7cd3179712cb2a64545c",
-                         "title": "Вторник",
-                         "description": "Вторник"
-                     }
-                     {
-                         "image_id": "1030494/c36447777399c864ce73",
-                         "title": "Среда",
-                         "description": "Среда"
-                     }
-                 ],
-                 "end_session": false
-             },
-             "version": "1.0"
-        } 
+                        {
+                            "image_id": "1030494/1707ea63f8a71ce5995c",
+                            "title": "Понедельник",
+                            "description": "Понедельник",
+                        },
+                        {
+                            "image_id": "965417/7cd3179712cb2a64545c",
+                            "title": "Вторник",
+                            "description": "Вторник",
+                        },
+                        {
+                            "image_id": "1030494/c36447777399c864ce73",
+                            "title": "Среда",
+                            "description": "Среда",
+                        },
+                    ],
+                    "end_session": false,
+                },
+                "version": "1.0",
+            }
+        }
+        res['response']
         return
     
     if req['request']['original_utterance'].lower() in['спасибо', 'благодарю']:
