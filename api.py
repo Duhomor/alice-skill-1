@@ -52,7 +52,7 @@ def handle_dialog(req, res):
         return
     
     if req['request']['original_utterance'].lower() in['понедельник']:
-            res['response']['text'] = 'В какой группе ты учишься? {}'.format(usstorage['group'])
+        res['response']['text'] = 'В какой группе ты учишься? {}'.format(usstorage['group'])
         return
     
     if req['request']['original_utterance'].lower() in['спасибо', 'благодарю']:
