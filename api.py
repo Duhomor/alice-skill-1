@@ -42,18 +42,40 @@ def main():
 
 
 def handle_dialog(req, res):
-    user_storage = {}
     if req['session']['new']:
         res['response']['text'] = 'Привет! Я бот ЯГТУ. Я могу показать расписание занятий для твоей группы. В какой группе ты учишься?'
         return
     
-    if req['request']['original_utterance'].lower() in['эис-45']:
-        user_storage['group'] = 'eis45'
-        res['response']['text'] = 'Рассписание на какой день недели тебе нужно найти?'
+    if req['request']['original_utterance'].lower() in['эмп-40', 'эмл-46', 'эмгх-46']:
+        res['response']['text'] = 'ПН\n8.30-11.40 Учебная практика, Г-803\nПТ\n8.30-11.40 Учебная практика, Г-803'
         return
     
-    if req['request']['original_utterance'].lower() in['понедельник']:
-        res['response']['text'] = 'В какой группе ты учишься? {}'.format(user_storage['group'])
+    if req['request']['original_utterance'].lower() in['ээ-47']:
+        res['response']['text'] = ''
+        return
+    
+    if req['request']['original_utterance'].lower() in['эсм-42']:
+        res['response']['text'] = ''
+        return
+    
+    if req['request']['original_utterance'].lower() in['эук-43']:
+        res['response']['text'] = ''
+        return
+    
+    if req['request']['original_utterance'].lower() in['эис-44']:
+        res['response']['text'] = ''
+        return
+    
+    if req['request']['original_utterance'].lower() in['эис-45']:
+        res['response']['text'] = ''
+        return
+    
+    if req['request']['original_utterance'].lower() in['эпи-41']:
+        res['response']['text'] = ''
+        return
+    
+    if req['request']['original_utterance'].lower() in['эи-48']:
+        res['response']['text'] = ''
         return
     
     if req['request']['original_utterance'].lower() in['спасибо', 'благодарю']:
