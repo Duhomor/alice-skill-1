@@ -72,9 +72,9 @@ def handle_dialog(req, res):
                             "description": "Среда",
                         },
                     ],
-                    "end_session": false,
+                    "end_session": false
                 },
-                "version": "1.0",
+                "version": "1.0"
             }
         }
         res['response']
