@@ -41,7 +41,7 @@ def main():
     )
 
 def handle_dialog(req, res):
-    userStorage = {}
+    usstorage = {}
     if req['session']['new']:
         res['response']['text'] = 'Привет! Я бот ЯГТУ. Я могу показать расписание занятий для твоей группы. В какой группе ты учишься?'
         return
@@ -52,7 +52,7 @@ def handle_dialog(req, res):
         return
     
     if req['request']['original_utterance'].lower() in['понедельник']:
-            res['response']['text'] = 'В какой группе ты учишься? {}'.format(userStorage['group'])
+            res['response']['text'] = 'В какой группе ты учишься? {}'.format(usstorage['group'])
         return
     
     if req['request']['original_utterance'].lower() in['спасибо', 'благодарю']:
