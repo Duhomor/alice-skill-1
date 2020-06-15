@@ -61,44 +61,22 @@ def handle_dialog(req, res):
                             "image_id": "1540737/9207ce3683b5e3d72274",
                             "title": "Понедельник",
                             "description": "Понедельник",
-                            "button": {
-                                "text": "Понедельник",
-                            },
-                        }
+                        },
                         {
                             "image_id": "1030494/1707ea63f8a71ce5995c",
                             "title": "Вторник",
                             "description": "Вторник",
-                            "button": {
-                                "text": "Вторник",
-                            },
-                        }
+                        },
                         {
                             "image_id": "1540737/b46580059879b8be11db",
                             "title": "Среда",
                             "description": "Среда",
-                            "button": {
-                                "text": "Среда",
-                            },
                         },
                     ],
-                    "footer": {
-                        "text": "Текст блока под изображением.",
-                        "button": {
-                            "text": "Надпись на кнопке",
-                        },
-                    },
                 },
-                "buttons": [
-                    {
-                        "title": "Надпись на кнопке",
-                        "hide": true,
-                    },
-                ],
                 "end_session": false
             },
-            "version": "1.0"
-        }
+        },
         res['response'] 
         return
     
