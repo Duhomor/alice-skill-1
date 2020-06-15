@@ -33,7 +33,6 @@ def main():
         indent=2
     )
 
-
 def handle_dialog(req, res):
     if req['session']['new']:
         res['response']['text'] = 'Привет! Я бот ЯГТУ. Я могу показать расписание занятий для твоей группы. В какой группе ты учишься?'
