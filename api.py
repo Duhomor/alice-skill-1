@@ -41,37 +41,21 @@ def main():
     )
 
 def handle_dialog(req, res):
-    storage = {}
+    userStorage = {}
     if req['session']['new']:
         res['response']['text'] = 'Привет! Я бот ЯГТУ. Я могу показать расписание занятий для твоей группы. В какой группе ты учишься?'
         return
     
     if req['request']['original_utterance'].lower() in['эис-45']:
-        res[
-            'response': {
-                "text": "Не удалось найти расписание",
-                "tts": "Не удал+ось найт+и распис+ание",
-                "card": {
-                    "type": "ItemsList",
-                    "header": {
-                        "text": "текст",
-                    },
-                    "items": [
-                        {
-                            "image_id": "1540737/9207ce3683b5e3d72274",
-                            "title": "текст",
-                            "description": "текст",
-                        },
-                        {
-                            "image_id": "1030494/1707ea63f8a71ce5995c",
-                            "title": "текст",
-                            "description": "текст",
-                        },
-                    ],
-                },
-                "end_session": false
-            },
-        ]
+        userStorage['group'] = 'eis45',
+        res['response']['text'] = 'Рассписание на какой день недели тебе нужно найти?'
+        return
+    
+    if req['request']['original_utterance'].lower() in['понедельник']:
+        if userStorage['group']['eis45']:
+            res['response']['text'] = 'Рассписание на какой день недели тебе нужно найти?'
+        else
+            res['response']['text'] = 'В какой группе ты учишься?'
         return
     
     if req['request']['original_utterance'].lower() in['спасибо', 'благодарю']:
