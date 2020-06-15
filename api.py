@@ -5,7 +5,6 @@ from __future__ import unicode_literals
 # Импортируем модули для работы с JSON и логами.
 import json
 import logging
-import numpy as np
 
 # Импортируем подмодули Flask для запуска веб-сервиса.
 from flask import Flask, request
