@@ -51,6 +51,10 @@ def handle_dialog(req, res):
         res['response']['text'] = 'Рассписание на какой день недели тебе нужно найти?'
         return
     
+    if req['request']['original_utterance'].lower() in['понедельник']:
+            res['response']['text'] = 'В какой группе ты учишься?{}'.format(userStorage["group"])
+        return
+    
     if req['request']['original_utterance'].lower() in['спасибо', 'благодарю']:
         res['response']['text'] = 'Рада помочь.'   
         return
