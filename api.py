@@ -46,6 +46,38 @@ def handle_dialog(req, res):
         res['response']['text'] = 'Привет! Я бот ЯГТУ. Я могу показать расписание занятий для твоей группы. В какой группе ты учишься?'
         return
     
+    if req['request']['original_utterance'].lower() in['эис-45']:
+        res{
+            "response": {
+                "text": "Расписание",
+                "card": {
+                    "type": "ItemsList",
+                    "header": {
+                        "text": "ЭИС-45",
+                    },
+                    "items": [
+                     {
+                         "image_id": "1030494/1707ea63f8a71ce5995c",
+                         "title": "Понедельник",
+                         "description": "Понедельник"
+                     }
+                     {
+                         "image_id": "965417/7cd3179712cb2a64545c",
+                         "title": "Вторник",
+                         "description": "Вторник"
+                     }
+                     {
+                         "image_id": "1030494/c36447777399c864ce73",
+                         "title": "Среда",
+                         "description": "Среда"
+                     }
+                 ],
+                 "end_session": false
+             },
+             "version": "1.0"
+        } 
+        return
+    
     if req['request']['original_utterance'].lower() in['спасибо', 'благодарю']:
         res['response']['text'] = 'Рада помочь.'   
         return
