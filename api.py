@@ -58,17 +58,7 @@ def handle_dialog(req, res):
                     },
                     "items": [
                         {
-                            "image_id": "1540737/9207ce3683b5e3d72274",
-                            "title": "Понедельник",
-                            "description": "Понедельник",
-                        },
-                        {
-                            "image_id": "1030494/1707ea63f8a71ce5995c",
-                            "title": "Вторник",
-                            "description": "Вторник",
-                        },
-                        {
-                            "image_id": "1540737/b46580059879b8be11db",
+                            "image_id": "https://sun1-28.userapi.com/c626830/v626830843/3705e/Z2DTU2yvRJE.jpg",
                             "title": "Среда",
                             "description": "Среда",
                         },
