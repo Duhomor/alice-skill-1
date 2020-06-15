@@ -46,34 +46,37 @@ def handle_dialog(req, res):
         res['response']['text'] = 'Привет! Я бот ЯГТУ. Я могу показать расписание занятий для твоей группы. В какой группе ты учишься?'
         return
     
-    if req['request']['original_utterance'].lower() in['эис-44']:
-        storage["group"] = 'эис-44'
-        res['response']['text'] = 'Расписание на какой день недели тебя интересует?'   
-        return
-                
-    if req['request']['original_utterance'].lower() in['эук-43']:
-        storage["group"] = 'эук-43'
-        res['response']['text'] = 'Расписание на какой день недели тебя интересует?'   
-        return
-                
-    if req['request']['original_utterance'].lower() in['ээ-47']:
-        storage["group"] = 'ээ-47'
-        res['response']['text'] = 'Расписание на какой день недели тебя интересует?'   
-        return
-    
-    if req['request']['original_utterance'].lower() in['понедельник']:
-        storage["day"] = 'Понедельник'
-        res['response']['text'] = '08.30-10.00 - 2-7н. Практика производственная, лек., пр.з. 4 ч., Г-606 \n10.10-11.40 \n11.40-12.20 \n12.20-13.50 - 2,7-10н. Всеобщее управление качеством, лек., пр.з. 4 ч., В-309 \n14.00-15.30 \n15.40-17.10 \n17.30-19.00'   
-        return
-    
-    if req['request']['original_utterance'].lower() in['четверг']:
-        storage["day"] = 'Четверг'
-        res['response']['text'] = '08.30-10.00 - 3н. БЖД лаб. 4 ч. по п/гр, Г-721 \n10.10-11.40 - 5-6н. БЖД, пр.з. 4 ч., Г-903 \n11.40-12.20 \n12.20-13.50 - 2н. Защита интелл. собственности, пр.з. 4 ч., В-306 \n14.00-15.30 \n15.40-17.10 \n17.30-19.00'
-        return
-    
-    if req['request']['original_utterance'].lower() in['воскресенье']:
-        storage["day"] = 'воскресенье'
-        res['response']['text'] = 'Этот день - выходной.'   
+    if req['request']['original_utterance'].lower() in['эис-45']:
+        {
+            "response": {
+                "text": "Расписание",
+                "card": {
+                    "type": "ItemsList",
+                    "header": {
+                        "text": "ЭИС-45",
+                    },
+                    "items": [
+                     {
+                         "image_id": "1030494/1707ea63f8a71ce5995c",
+                         "title": "Понедельник",
+                         "description": "Понедельник"
+                     }
+                     {
+                         "image_id": "965417/7cd3179712cb2a64545c",
+                         "title": "Вторник",
+                         "description": "Вторник"
+                     }
+                     {
+                         "image_id": "1030494/c36447777399c864ce73",
+                         "title": "Среда",
+                         "description": "Среда"
+                     }
+                 ],
+                 "end_session": false
+             },
+             "version": "1.0"
+        }
+        res['response']  
         return
     
     if req['request']['original_utterance'].lower() in['спасибо', 'благодарю']:
