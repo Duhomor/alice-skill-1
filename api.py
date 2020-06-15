@@ -49,11 +49,11 @@ def handle_dialog(req, res):
     
     if req['request']['original_utterance'].lower() in['эис-45']:
         group_storage = 'eis45'
-        res['response']['text'] = 'Рассписание на какой день недели тебе нужно найти?'
+        res['response']['text'] = 'Рассписание на какой день недели тебе нужно найти? {}'.format(group_storage)
         return group_storage
     
     if req['request']['original_utterance'].lower() in['понедельник']:
-        res['response']['text'] = 'В какой группе ты учишься? {}'.format(group_storage)
+        res['response']['text'] = 'В какой группе ты учишься?'
         return
     
     if req['request']['original_utterance'].lower() in['спасибо', 'благодарю']:
