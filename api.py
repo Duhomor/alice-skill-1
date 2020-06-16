@@ -38,17 +38,65 @@ def handle_dialog(req, res):
         res['response']['text'] = 'Привет! Я бот ЯГТУ. Я могу показать расписание занятий для твоей группы. В какой группе ты учишься?'
         return
     
-    if req['request']['original_utterance'].lower() in['спасибо', 'спс', 'спасиб', 'спасибки', 'спасибочки', 'благодарю', 'мерси', 'сэнк ю', 'сэнкс', 'thank', 'thanks']:
-        res['response']['text'] = 'Рад помочь.'   
-        return
-    
     if req['request']['original_utterance'].lower() in['помощь', 'помоги', 'помочь', 'help', 'хэлп', 'подскажи', 'подсказка', 'подсказать', 'справка']:
         res['response']['text'] = 'Для того, чтобы узнать расписание занятий для своей группы, просто введи её название, например, "ЭИС-44". Чтобы закрыть навык, введи "Выход".'   
+        return
+    
+    if req['request']['original_utterance'].lower() in['спасибо', 'спс', 'спасиб', 'спасибки', 'спасибочки', 'благодарю', 'мерси', 'сэнк ю', 'сэнкс', 'thank', 'thanks']:
+        res['response']['text'] = 'Рад помочь.'   
         return
     
     if req['request']['original_utterance'].lower() in['выход', 'выйти', 'выйди', 'закрытие', 'закрыть', 'закрой', 'уход', 'уйти', 'уйди']:
         res['response']['text'] = 'До свидания.'  
         res['response']['end_session'] = True 
+        return
+    
+    if req['request']['original_utterance'].lower() in['эм-10']:
+        res['response']['text'] = 'ПН\n10.10-11.40 Н\н с 3 по 13н. Орг-ция предпр. деят-сти., Г-801\n11.50-13.50 Физ.культура, на 2н лек., акт. зал, с 3н пр.з.\n14.00-15.30 2-13н. История, лек., Б–122\n15.40-17.10 2-17н. История, пр.з., А-408\nВТ\n12.20-13.50 2-17н. (кр.14н) Математика, пр.з., Б-224\nСР\n8.30-11.40 4-17н. Мат.методы и модели в менеджменте, лаб.4ч по п\гр, Г-812\n11.50-13.50 Физ.культура, со 2н пр.з.\n14.00-15.30 2-15н. Мат.методы и модели в менеджменте, лек., А-414\nЧТ\n8.30-11.40 Ч\н со 2 по 16н. Англ.яз., пр.з.4ч, Г-812\n Н\н с 7 по 17н. Эконом.теор., пр.з.4ч, В-218\n12.20-15.30 Н\н с 7 по 17н. Орг-ция предпр.деят-сти, лаб.4ч по п\гр, Г-625\nПТ\n8.30-10.00 5-6н. Математика, пр.з., Б-224\n10.10-11.40 Ч\н со 2 по 16н. Математика, пр.з., Б-224\nН\н с 3 по 17н. Орг-ция предпр.деят-сти, пр.з., Г-812\n12.20-13.50 2-15н. (кр.13н) Математика (мат.анализ), лек., Б-203\n17н. Эконом.теор. (макроэкономика), лек., Б-203\n14.00-15.30 2-17н. (кр.13н) Эконом.теор. (макроэкономика), лек., Б-203\n15.40-19.00 2-10н. Англ.яз., пр.з.4ч, Г-801'
+        return
+    
+    if req['request']['original_utterance'].lower() in['ээ-19']:
+        res['response']['text'] = ''
+        return
+    
+    if req['request']['original_utterance'].lower() in['эи-18']:
+        res['response']['text'] = ''
+        return
+    
+    if req['request']['original_utterance'].lower() in['эсм-12']:
+        res['response']['text'] = ''
+        return
+    
+    if req['request']['original_utterance'].lower() in['эук-13']:
+        res['response']['text'] = ''
+        return
+    
+    if req['request']['original_utterance'].lower() in['']:
+        res['response']['text'] = ''
+        return
+    
+    if req['request']['original_utterance'].lower() in['']:
+        res['response']['text'] = ''
+        return
+    
+    if req['request']['original_utterance'].lower() in['']:
+        res['response']['text'] = ''
+        return
+    
+    if req['request']['original_utterance'].lower() in['']:
+        res['response']['text'] = ''
+        return
+    
+    if req['request']['original_utterance'].lower() in['']:
+        res['response']['text'] = ''
+        return
+    
+    if req['request']['original_utterance'].lower() in['']:
+        res['response']['text'] = ''
+        return
+    
+    if req['request']['original_utterance'].lower() in['']:
+        res['response']['text'] = ''
         return
     
     if req['request']['original_utterance'].lower() in['эмп-40', 'эмл-46', 'эмгх-46']:
